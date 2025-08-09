@@ -32,6 +32,7 @@
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
         }
         .project-box:hover {
             transform: scale(1.05);
@@ -44,6 +45,18 @@
         }
         a:hover {
             color: #007BFF;
+        }
+               
+        #pdf-viewer {
+            margin-top: 40px;
+            width: 80vw;
+            height: 600px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            display: none; /* Hidden initially */
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -63,11 +76,33 @@
                 <h2>Saddle Points for 2D Electric Field</h2>
             </a>
         </div>
-        <div class="project-box">
-            <a href="Quantum%20Tunnelling%20Without%20A%20Barrier%20-%20Yann%20R.%20Janssen.pdf" target="_blank">
-                <h2>Undergraduate Thesis</h2>
-            </a>
+
+        <!-- UPDATED Undergraduate Thesis box (no <a>) -->
+        <div class="project-box" id="thesis-box">
+            <h2>Undergraduate Thesis</h2>
         </div>
     </div>
+
+    <!-- NEW: PDF iframe that will display the thesis -->
+    <iframe id="pdf-viewer" src="" frameborder="0"></iframe>
+
+    <!-- NEW: JavaScript to toggle PDF iframe -->
+    <script>
+        const thesisBox = document.getElementById('thesis-box');
+        const pdfViewer = document.getElementById('pdf-viewer');
+
+        thesisBox.addEventListener('click', () => {
+            if (pdfViewer.style.display === 'block') {
+                // Hide PDF
+                pdfViewer.style.display = 'none';
+                pdfViewer.src = '';
+            } else {
+                // Show PDF embedded below
+                pdfViewer.src = 'Quantum%20Tunnelling%20Without%20A%20Barrier%20-%20Yann%20R.%20Janssen.pdf';
+                pdfViewer.style.display = 'block';
+                pdfViewer.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
 </body>
 </html>
