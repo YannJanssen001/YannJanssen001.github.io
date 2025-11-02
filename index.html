@@ -85,6 +85,10 @@
         <div class="project-box" id="modelling-box">
             <h2>Numerical Modelling Project (Year 2 BSc KCL)</h2>
         </div>
+         <!-- Zeeman effect lab report paper -->
+        <div class="project-box" id="zeeman-box">
+            <h2>Zeeman Effect Lab Report </h2>
+        </div>
     </div>
         
 
@@ -116,13 +120,31 @@
     
     modellingBox.addEventListener('click', () => {
         const pdfViewer = document.getElementById('pdf-viewer');
-        if (pdfViewer.style.display === 'block' && pdfViewer.src.includes('Numerical%20Modelling%20Project')) {
+        if (pdfViewer.style.display === 'block' && pdfViewer.src.includes('Formal%20Lab%20Report-%20Zeeman%20Effect')) {
             // Hide PDF if already open
             pdfViewer.style.display = 'none';
             pdfViewer.src = '';
         } else {
             // Show new PDF
             pdfViewer.src = 'Numerical%20Report%20-%20K21109226%20.pdf';
+            pdfViewer.style.display = 'block';
+            pdfViewer.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+</script>
+    
+    <script>
+    const modellingBox = document.getElementById('zeeman-box');
+    
+    modellingBox.addEventListener('click', () => {
+        const pdfViewer = document.getElementById('pdf-viewer');
+        if (pdfViewer.style.display === 'block' && pdfViewer.src.includes('Numerical%20Modelling%20Project')) {
+            // Hide PDF if already open
+            pdfViewer.style.display = 'none';
+            pdfViewer.src = '';
+        } else {
+            // Show new PDF
+            pdfViewer.src = 'Formal%20Lab%20Report-%20Zeeman%20Effect%20-%20Yann%20Janssen%20K21109226.pdf';
             pdfViewer.style.display = 'block';
             pdfViewer.scrollIntoView({ behavior: 'smooth' });
         }
