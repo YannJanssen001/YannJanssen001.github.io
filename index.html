@@ -81,7 +81,13 @@
         <div class="project-box" id="thesis-box">
             <h2>Undergraduate Thesis</h2>
         </div>
+        <!-- NEW: Numerical Modelling Project box -->
+        <div class="project-box" id="modelling-box">
+            <h2>Numerical Modelling Project (Year 2 BSc KCL)</h2>
+        </div>
     </div>
+        
+
 
     <!-- NEW: PDF iframe that will display the thesis -->
     <iframe id="pdf-viewer" src="" frameborder="0"></iframe>
@@ -104,5 +110,24 @@
             }
         });
     </script>
+    
+    <script>
+    const modellingBox = document.getElementById('modelling-box');
+    
+    modellingBox.addEventListener('click', () => {
+        const pdfViewer = document.getElementById('pdf-viewer');
+        if (pdfViewer.style.display === 'block' && pdfViewer.src.includes('Numerical%20Modelling%20Project')) {
+            // Hide PDF if already open
+            pdfViewer.style.display = 'none';
+            pdfViewer.src = '';
+        } else {
+            // Show new PDF
+            pdfViewer.src = 'Numerical%20Modelling%20Project%20-%20Year%202%20BSc%20KCL.pdf';
+            pdfViewer.style.display = 'block';
+            pdfViewer.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+</script>
+
 </body>
 </html>
