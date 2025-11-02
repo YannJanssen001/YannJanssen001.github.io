@@ -163,6 +163,49 @@
         }
     });
 </script>
+    <script>
+    const mathiaBox = document.getElementById('mathia-box');
+
+    mathiaBox.addEventListener('click', () => {
+        const pdfViewer = document.getElementById('pdf-viewer');
+
+        if (
+            pdfViewer.style.display === 'block' &&
+            pdfViewer.src.includes('Math%20IA%20First%20Draft%20Final%20Version')
+        ) {
+            // Hide PDF if already open
+            pdfViewer.style.display = 'none';
+            pdfViewer.src = '';
+        } else {
+            // Show Math IA PDF
+            pdfViewer.src = 'Math%20IA%20First%20Draft%20Final%20Version%20-%20Yann%20J.%20copy.pdf';
+            pdfViewer.style.display = 'block';
+            pdfViewer.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+</script>
+    <script>
+    const physicsiaBox = document.getElementById('physicsia-box');
+
+    physicsiaBox.addEventListener('click', () => {
+        const pdfViewer = document.getElementById('pdf-viewer');
+
+        if (
+            pdfViewer.style.display === 'block' &&
+            pdfViewer.src.includes('Physics%20IA%20-%20Yann%20J.')
+        ) {
+            // Hide PDF if already open
+            pdfViewer.style.display = 'none';
+            pdfViewer.src = '';
+        } else {
+            // Show Physics IA PDF
+            pdfViewer.src = 'Physics%20IA%20-%20Yann%20J.%20copy.pdf';
+            pdfViewer.style.display = 'block';
+            pdfViewer.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+</script>
+
 
 
 </body>
